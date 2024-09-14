@@ -1,12 +1,11 @@
 # Alguns atalhos:
 - CTRL + L (Limpa o terminal)
 
-
-# O que é uma linguagem de programação?
+# O que é uma linguagem de programação:
 
 - Mecanismo que da instruções para o computador;
 
-# O que é um algoritimo?
+# O que é um algoritimo:
 
 - Sequencia de passos lógica e finita para solução de um problema;
 
@@ -20,13 +19,13 @@
 - Controle de fluxo (if/else)
 - Estrutura de repetição (for, while)  
 
-# Fases da resolução de um problema
+# Fases da resolução de um problema:
 
 - Coletar os dados
 - Processar os dados (manipular, alterar ...)
 - Apresentar os dados
 
-# Variáveis
+# Variáveis:
 
 - Variáveis globais e locais
 - Constante (Const)
@@ -37,6 +36,16 @@
 - Number (Números)
 - Function (Função)
 
-## Operadores
+## Operadores:
 
 - Operadores de atribuição de valores
+
+# Estrutura de dados:
+
+- Array é bem parecido com uma matrix, Array é uma lista que contem qualquer tipo de dado
+
+
+
+# Explicação sobre alguns comandos
+
+- Console.log(Mostra uma mensagem para o usuário)
