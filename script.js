@@ -28,14 +28,17 @@ const listarMetas = async () => {
         instructions: false,
     })
 
+    metas.forEach((m) =>{
+        m.checked = false;
+    })
+
+
     if (respostas.length == 0) {
         console.log('Erro 280: não foi identificado uma meta');
         return;
     }
 
-    metas.forEach((m) =>{
-        m.checked = false;
-    })
+    
 
     respostas.forEach((resposta) => {
         const meta = metas.find((m) => {
