@@ -1,5 +1,10 @@
 const {select, input, checkbox} = require ('@inquirer/prompts')
 
+
+
+let msg = 'To-Do-List :)'
+
+
 let meta = {
     value: "Ser feliz",
     checked: false,
@@ -11,13 +16,15 @@ const cadastrarMeta = async () => {
     message: 'Qual a sua meta?'
     }) 
         if (meta.length == 0) {
-            console.log('Erro 280: não foi identificado uma meta');
+            msg = 'Erro 280: não foi identificado uma meta';
             return;
         }
 
         metas.push({
             value: meta, checked: false
         })
+
+        msg = 'Meta cadastrada com sucesso!'
 
     }
 
@@ -34,7 +41,7 @@ const listarMetas = async () => {
 
 
     if (respostas.length == 0) {
-        console.log('Erro 280: não foi identificado uma meta');
+        msg = 'Erro 280: não foi identificado uma meta';
         return;
     }
 
@@ -48,7 +55,7 @@ const listarMetas = async () => {
         meta.checked = true;
     })
 
-    console.log ('Meta(s) concluidas(s)');
+    msg = 'Meta(s) concluidas(s)';
 }
 
 const metasRealizadas = async () => {
@@ -56,13 +63,13 @@ const metasRealizadas = async () => {
         return meta.checked;      
 })
     if (realizadas.length == 0) {
-        console.log('Nao existem metas ainda');
+        msg = 'Nao existem metas ainda';
         return;
     }
 
     await select ({
         message: 'Metas realizadas: ' + realizadas.length,
-        choices: [...realizadas]
+        choices: [...realizadas],
     })
     console.log(realizadas);
         
@@ -75,13 +82,13 @@ const metasAbertas = async  () => {
     })
     
     if (abertas == 0) {
-        console.log ('Você não possui metas abertas!. PARABÉNS!!')
-        return
+        msg = ('Você não possui metas abertas!. PARABÉNS!!');
+        return;
     }
     
     await select ({
         message: 'Metas abertas: ' + abertas.length,
-        choices: [...abertas]
+        choices: [...abertas],
     })
 }
 
@@ -99,7 +106,7 @@ const deletarMetas = async () =>{
     })
 
     if(itensDelet.length == 0){
-        console.log('Nenhum item foi selecionado para ser deletado!');
+        msg = 'Nenhum item foi selecionado para ser deletado!';
         return;
     }
 
@@ -110,13 +117,21 @@ const deletarMetas = async () =>{
     })
 }
 
+function showMsg () {
+    console.clear();
+        if (msg != '') {
+            console.log(msg);
+            console.log('')
+            msg = '';
+        }
+}
 
 
 
 
 const start = async () => {
     while (true) {
-        
+        showMsg()
         const options = await select ({
             message: 'Menu >',
             choices: [{
