@@ -55,7 +55,7 @@ const listarMetas = async () => {
         meta.checked = true;
     })
 
-    msg = 'Meta(s) concluidas(s)';
+    msg = 'Meta(s) concluidas(s) ';
 }
 
 const metasRealizadas = async () => {
