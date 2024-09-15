@@ -68,6 +68,14 @@ const metasRealizadas = async () => {
         
     }
 
+const metasAbertas = async  () => {
+    
+    const abetas = metas.filter ((metas) => {
+        return meta.checked != true;
+    })
+    
+}
+
 
 
 const start = async () => {
@@ -91,6 +99,11 @@ const start = async () => {
             },
 
             {
+                name: 'Metas abertas',
+                value: 'abertas'
+            },
+
+            {
                 name: 'Sair',
                 value: "sair"
             }]
@@ -105,17 +118,22 @@ const start = async () => {
 
         case 'lista':
             await listarMetas();
-            console.log(metas)
+                console.log(metas)
         break;
         
         case 'realizadas':            
-        await metasRealizadas();
+            await metasRealizadas();
         break;
 
+        case 'abertas':
+            await metasAbertas();
+        break;
 
-            case 'sair':
-                console.log('Até mais!')
-                return;
+        case 'sair':
+            console.log('Até mais!')
+        return;
+
+
         }
     }
 
